@@ -1,7 +1,9 @@
-import sys,logging, schedule
+import sys,logging
 sys.path.append('modulos')
 from read_file import ReadFile
 from open_browser import OpenBrowser
+from login import Login
+import time
 
 
 LOG_FILENAME = 'logs\log.log'
@@ -13,7 +15,18 @@ def job():
     try:
         logging.info('==========| INICIANDO BPA |==========')
         df = ReadFile('Senhas.csv')
-        OpenBrowser()
+        # print(df)
+        for index, row in df.iterrows():
+            data = {
+                'index': index,
+                'cpf': row['cpf'],
+                'codigo': row['codigo'],
+                'senha': row['senha']
+            }
+            print(data)
+            OpenBrowser()
+            Login(data)
+            time.sleep(10)
         
         
         logging.info('==========| FINALIZANDO BPA |==========')
