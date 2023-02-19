@@ -54,6 +54,7 @@ def Login(data):
         erro = pyautogui.locateCenterOnScreen('./modulos/imgs/erro.png')
         erroBloqueio = pyautogui.locateCenterOnScreen('./modulos/imgs/erroTempo.png')
         erroCNPJ = pyautogui.locateCenterOnScreen('./modulos/imgs/erroCNPJ.png')
+        erroGeneric = pyautogui.locateCenterOnScreen('./modulos/imgs/erro_.png')
 
         time.sleep(2)
         if erro:
@@ -67,7 +68,11 @@ def Login(data):
         elif erroBloqueio:
             logging.warn('Bloqueio temporário de tentativas')
             logging.info('Finalizando a função Login!')
-            return '2'    
+            return '2'   
+        elif erroGeneric:
+            logging.warn('Erro no login!')
+            logging.info('Finalizando a função Login!')
+            return '1'  
         else:
             logging.warn('Login Realizado com sucesso')
             logging.info('Finalizando a função Login!')
