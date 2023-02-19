@@ -6,5 +6,7 @@
 - [x] - Criar módulo de geração do informe
 - [x] - Criar módulos de status (Funcionalidade inclusa atravez de um dicionário)
 - [x] - Criar módulo para sair do site (Funcionalidade inclusa dentro do módulo de geração de informe)
+- [x] - Gerar arquivo de instalação de módulos
+- [x] - Criar documentação 
  
 
